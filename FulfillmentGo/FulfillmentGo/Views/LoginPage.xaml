@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FulfillmentGo.Views.LoginPage" BackgroundColor="{DynamicResource ContentBgColor}">
+    <ContentPage.Content>
+        <Frame Margin="20" VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" AbsoluteLayout.LayoutFlags="All" CornerRadius="8">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Spacing="5" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="150" WidthRequest="150" Aspect="AspectFit" />
+                <Entry Text="{Binding Username}" Placeholder="Username" />
+                <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" />
+                <!--<Button Text="Sign In" Clicked="Handle_Clicked" />-->
+                <Button Text="Sign In" Clicked="Button_Clicked" />
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

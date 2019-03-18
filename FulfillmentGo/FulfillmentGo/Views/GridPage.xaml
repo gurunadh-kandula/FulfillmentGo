@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FulfillmentGo.Views.GridPage"  xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local="clr-namespace:FulfillmentGo.ViewModels">
+    <ContentPage.BindingContext>
+        <local:OrderInfoRepository x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <syncfusion:SfDataGrid AllowSorting="True"  x:Name="dataGrid"
+                               ItemsSource="{Binding OrderInfoCollection}" GridLongPressed="DataGrid_GridLongPressed" >
+            <syncfusion:SfDataGrid.SortColumnDescriptions>
+                <syncfusion:SortColumnDescription ColumnName="Quantity" />
+            </syncfusion:SfDataGrid.SortColumnDescriptions>
+        </syncfusion:SfDataGrid>
+
+    </ContentPage.Content>
+</ContentPage>  
