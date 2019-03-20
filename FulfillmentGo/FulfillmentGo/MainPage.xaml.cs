@@ -43,6 +43,12 @@ namespace FulfillmentGo
                     case (int)MenuItemType.GridPage:
                         MenuPages.Add(id, new NavigationPage(new GridPage()));
                         break;
+                    case (int)MenuItemType.ApprovalOrdersPage:
+                        MenuPages.Add(id, new NavigationPage(new PurchaseOrderTabs()));
+                        break;
+                    case (int)MenuItemType.OrderDetailPage:
+                        MenuPages.Add(id, new NavigationPage(new OrderDetailPage()));
+                        break;
                     case (int)MenuItemType.Logout:
                         await DisplayAlert("Alert", "Logged out successfully", "OK");
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));

@@ -26,6 +26,8 @@ namespace FulfillmentGo.Views
                 new HomeMenuItem {Id = MenuItemType.StockTransferOrderApproval, Title="Stock Transfer Approval" },
                 new HomeMenuItem {Id = MenuItemType.BusinessNotification, Title="Business Notification" },
                 new HomeMenuItem{Id = MenuItemType.GridPage, Title="Grid Page" },
+                new HomeMenuItem{Id = MenuItemType.ApprovalOrdersPage, Title="ApprovalOrdersPage" },
+                new HomeMenuItem{Id = MenuItemType.OrderDetailPage, Title="OrderDetailPage" },
                 new HomeMenuItem {Id = MenuItemType.Logout, Title="LOGOUT" },
                 
             };

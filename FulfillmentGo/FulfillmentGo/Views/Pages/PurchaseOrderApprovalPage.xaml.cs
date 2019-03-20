@@ -22,9 +22,10 @@ namespace FulfillmentGo.Views.Pages
             InitializeComponent();
             BindingContext = new Books();
         }
-        private async void Chart_SelectionChanged(object sender, ChartSelectionEventArgs e)
+       /* private async void Chart_SelectionChanged(object sender, ChartSelectionEventArgs e)
         {
             await DisplayAlert("Alert", "Don't touch my pie piece", "kneeled");
-        }
+            
+        }*/
     }
 }

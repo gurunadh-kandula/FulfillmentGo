@@ -11,6 +11,7 @@ namespace FulfillmentGo.ViewModels
         private string vendor;
         private int quantity;
         private string status;
+
         //private string shipCountry;
 
 

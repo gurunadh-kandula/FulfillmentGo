@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:FulfillmentGo.Views.Pages"
+            x:Class="FulfillmentGo.Views.Pages.PurchaseOrderTabs" BarBackgroundColor="Transparent"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement ="Bottom"
+            android:TabbedPage.BarBackgroundColor="#000000"
+            android:TabbedPage.BarItemColor="#ffffff"
+            android:TabbedPage.BarSelectedItemColor="#FFD700">
+  <!--Pages can be added as references or inline-->
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <NavigationPage Title="OpenOrdersPage" Icon="ic_action_drafts.png">
+            <x:Arguments>
+                <views:OpenOrdersPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="ApprovedOrdersPage" Icon="ic_action_check_circle_outline.png">
+            <x:Arguments>
+                <views:ApprovedOrdersPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="RejectedOrdersPage" Icon="ic_action_close.png">
+            <x:Arguments>
+                <views:RejectedOrdersPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

@@ -15,4 +15,5 @@
             <Color x:Key="DetailBarBgColor">#1F3138</Color>
         </ResourceDictionary>
     </Application.Resources>
+    
 </Application>

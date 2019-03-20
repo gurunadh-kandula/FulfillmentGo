@@ -11,6 +11,8 @@ namespace FulfillmentGo.Models
         StockTransferOrderApproval,
         BusinessNotification,
         GridPage,
+        ApprovalOrdersPage,
+        OrderDetailPage,
         Logout
     }
 

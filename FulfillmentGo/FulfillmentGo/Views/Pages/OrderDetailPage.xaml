@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="FulfillmentGo.Views.Pages.OrderDetailPage">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="MainStack" VerticalOptions="FillAndExpand" >
+            <ScrollView BackgroundColor="#1F3138">
+                <StackLayout >
+                    <Grid>
+                        <Button TextColor="White" Text="{Binding OrderID, StringFormat='ORDERID: {0}'}" FontSize="10"  Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="ic_action_drafts.png"/>
+                        <Button TextColor="White" Text="{Binding Source, StringFormat='SOURCE:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="warehouse.png"/>
+                        <Button TextColor="White" Text="{Binding Destination, StringFormat='DESTINATION:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="warehouse.png"/>
+                        <Button TextColor="White" Text="{Binding Qty, StringFormat='Quantity :{0}'}" FontSize="10"  Grid.Row="2" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="quantity.png"/>
+                        <Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="10"  Grid.Row="2" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
+                    </Grid>
+                    <buttons:SfChip  Text="{Binding Notes}" 
+                            WidthRequest="150"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            ImageSource="textbox.png"
+                            ShowIcon="true" >
+                    </buttons:SfChip>
+                   
+                    <Label TextColor="White" FontSize="40" Text=" You feel you have many mood swings ? You think people will laugh at you when they'll know that you can't take things after a certain level of sarcasm? You think you are weak among the other strong hearted people ? Do people tag you as a COWARD when you experience panic attacks and emotional breakdowns ?
+   Nevermind! People never knew that being weak is the first step of transformation in life. Life knocks us down many times but when it does so, it's our responsibility to get up. It make take a while to overcome the pain but eventually it is our life and after all we have to get up one day or the other. The hard times are like foundation to a building, salt to your favourite dish without which it's not delicious and complete.
+    Just have a look and you will know that you are way better than others who are busy in their lives. Failure knocks us down because thats its character but whats your character? Is getting up and overcoming the failure not in your blood ?
+     People might laugh at you for doing nothing in life but remember this , those are the same people who will have a green eye when you perform better than them. Always think about people who spread laughter no matter what's going on in their lives. Always be a candle to someone. No matter what people say do what you want to do because ultimately the shoe has to fit you while others just have to admire it. It isn't totally your fault, it's just the time factor."></Label>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button Text="Approve" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Review" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Reject" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

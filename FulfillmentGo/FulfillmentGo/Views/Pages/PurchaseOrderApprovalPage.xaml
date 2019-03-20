@@ -7,7 +7,7 @@
     
     <ContentPage.Content>
     <StackLayout Margin="15">
-            <chart:SfChart SelectionChanged="Chart_SelectionChanged"  x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart  x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <chart:SfChart.Legend>
                     <chart:ChartLegend>
                         <chart:ChartLegend.LabelStyle>
@@ -19,12 +19,13 @@
             <chart:ChartTitle Text="PURCHASE ORDERS"/>
          </chart:SfChart.Title>
         <chart:SfChart.Series>
-                    <chart:PieSeries  EnableDataPointSelection="True" ExplodeIndex="1" ExplodeOnTouch="True" EnableAnimation="True" ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Quantity" EnableTooltip="True">
+                    <chart:PieSeries  EnableDataPointSelection="True" EnableSmartLabels="True" ConnectorLineType = "Bezier" 
+					 DataMarkerPosition = "OutsideExtended" ExplodeIndex="1" ExplodeOnTouch="True" EnableAnimation="True" ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Quantity" >
                 <chart:PieSeries.DataMarker>
-                    <chart:ChartDataMarker LabelContent="Percentage">
+                    <chart:ChartDataMarker LabelContent="YValue">
                     <chart:ChartDataMarker.LabelStyle>
 
-                            <chart:DataMarkerLabelStyle Font="Bold,14" LabelPosition="Auto">
+                            <chart:DataMarkerLabelStyle Font="Bold,10" LabelPosition="Auto">
                             </chart:DataMarkerLabelStyle>
                         
                    </chart:ChartDataMarker.LabelStyle>
