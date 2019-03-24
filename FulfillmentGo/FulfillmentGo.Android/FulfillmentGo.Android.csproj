@@ -47,6 +47,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +60,9 @@
     <PackageReference Include="Microcharts.Forms">
       <Version>0.7.1</Version>
     </PackageReference>
+    <PackageReference Include="NETStandard.Library">
+      <Version>2.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.1</Version>
     </PackageReference>
@@ -66,6 +70,9 @@
       <Version>16.4.0.54</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
+      <Version>16.4.0.54</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge">
       <Version>16.4.0.54</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
@@ -132,16 +139,76 @@
     <AndroidResource Include="Resources\drawable\ic_action_drafts.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\status.png" />
+    <AndroidResource Include="Resources\drawable\money.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\warehouse.png" />
+    <AndroidResource Include="Resources\drawable\money2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SKU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\reject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\approve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\source.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\destination.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\quantity.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\whiteapprove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\whitereject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pricing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\purchasing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\transportation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Promotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\markdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\transportation_g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\jda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\exequick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sales.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

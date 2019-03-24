@@ -3,39 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              x:Class="FulfillmentGo.Views.Pages.OrderDetailPage">
 
     <ContentPage.Content>
         <StackLayout x:Name="MainStack" VerticalOptions="FillAndExpand" >
-            <ScrollView BackgroundColor="#1F3138">
+            <ScrollView BackgroundColor="#33444B">
                 <StackLayout >
                     <Grid>
-                        <Button TextColor="White" Text="{Binding OrderID, StringFormat='ORDERID: {0}'}" FontSize="10"  Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="ic_action_drafts.png"/>
-                        <Button TextColor="White" Text="{Binding Source, StringFormat='SOURCE:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="warehouse.png"/>
-                        <Button TextColor="White" Text="{Binding Destination, StringFormat='DESTINATION:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="warehouse.png"/>
+                        <Button TextColor="White" Text="{Binding OrderID, StringFormat='ORDERID: {0}'}" FontSize="15"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="ic_action_drafts.png"/>
+                        <Button TextColor="White" Text="{Binding Source, StringFormat='SOURCE:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="source.png"/>
+                        <Button TextColor="White" Text="{Binding Destination, StringFormat='DESTINATION:{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="destination.png"/>
                         <Button TextColor="White" Text="{Binding Qty, StringFormat='Quantity :{0}'}" FontSize="10"  Grid.Row="2" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="quantity.png"/>
-                        <Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="10"  Grid.Row="2" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
+                        <Button TextColor="White" Text="{Binding OrderValue, StringFormat='Ordervalue :{0}'}" FontSize="10"  Grid.Row="2" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="money.png"/>
                     </Grid>
                     <buttons:SfChip  Text="{Binding Notes}" 
                             WidthRequest="150"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            BackgroundColor="Transparent"
+                            HeightRequest="70"         
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="#999999"
                             TextColor="White"
                             ImageSource="textbox.png"
                             ShowIcon="true" >
                     </buttons:SfChip>
-                   
-                    <Label TextColor="White" FontSize="40" Text=" You feel you have many mood swings ? You think people will laugh at you when they'll know that you can't take things after a certain level of sarcasm? You think you are weak among the other strong hearted people ? Do people tag you as a COWARD when you experience panic attacks and emotional breakdowns ?
-   Nevermind! People never knew that being weak is the first step of transformation in life. Life knocks us down many times but when it does so, it's our responsibility to get up. It make take a while to overcome the pain but eventually it is our life and after all we have to get up one day or the other. The hard times are like foundation to a building, salt to your favourite dish without which it's not delicious and complete.
-    Just have a look and you will know that you are way better than others who are busy in their lives. Failure knocks us down because thats its character but whats your character? Is getting up and overcoming the failure not in your blood ?
-     People might laugh at you for doing nothing in life but remember this , those are the same people who will have a green eye when you perform better than them. Always think about people who spread laughter no matter what's going on in their lives. Always be a candle to someone. No matter what people say do what you want to do because ultimately the shoe has to fit you while others just have to admire it. It isn't totally your fault, it's just the time factor."></Label>
-                </StackLayout>
+                    <Grid Margin="0">
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="180" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <gauge:SfCircularGauge  Margin="10" IsCenterAligned ="true">
+
+                            <gauge:SfCircularGauge.Headers >
+                                <gauge:Header Text="Urgency"  Position="0.5,0.6" ForegroundColor="White" TextSize="10" />
+                            </gauge:SfCircularGauge.Headers>
+
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale StartValue="-7" EndValue="7" Interval = "1" StartAngle = "180" SweepAngle = "180" LabelColor= "White">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:NeedlePointer  Value="{Binding DelayDur}" />
+                                        <gauge:RangePointer Value="{Binding DelayDur}" />
+                                        <gauge:MarkerPointer Value="{Binding DelayDur}" />
+                                    </gauge:Scale.Pointers>
+                                    <gauge:Scale.Ranges>
+                                        <gauge:Range StartValue = "-7" EndValue = "7" Thickness = "10" Offset = "0.6">
+                                            <gauge:Range.GradientStops>
+                                                <gauge:GaugeGradientStop Value="-7" Color="#F03E3E"/>
+                                                <gauge:GaugeGradientStop Value="0" Color="#FFDD00"/>
+                                                <gauge:GaugeGradientStop Value="4" Color="#30B32D"/>
+                                            </gauge:Range.GradientStops>
+                                        </gauge:Range>
+
+                                    </gauge:Scale.Ranges>
+                                </gauge:Scale>
+
+                            </gauge:SfCircularGauge.Scales>
+
+                        </gauge:SfCircularGauge>
+                    </Grid>
+                    <Grid>
+                        <Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="10"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
+                        <Button TextColor="White" Text="{Binding NoOfTrucks, StringFormat='No of Trucks Built:{0}'}" FontSize="10"  Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="truck.png"/>
+                        <Button TextColor="White" Text="{ Binding NoOfSKUs,StringFormat='No of SKUs in the Order :{0}'}" FontSize="10"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="SKU.png"/>
+                    </Grid>
+                  </StackLayout>
             </ScrollView>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Button Text="Approve" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Review" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Reject" HorizontalOptions="FillAndExpand"></Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#1F3138">
+
+                <Button Clicked="Approve_Button_Clicked"  TextColor="White" Text="Approve" HorizontalOptions="FillAndExpand" FontSize="14" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Bold" Image="approve.png"></Button>
+                <Button Clicked="Review_Button_Clicked" TextColor="White" Text="Review" HorizontalOptions="FillAndExpand" FontSize="14"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Bold" Image="review.png"></Button>
+                <Button Clicked="Reject_Button_Clicked" TextColor="White" Text="Reject" HorizontalOptions="FillAndExpand" FontSize="14"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Bold" Image="reject.png"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

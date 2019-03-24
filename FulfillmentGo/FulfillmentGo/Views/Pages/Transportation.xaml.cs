@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FulfillmentGo.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AllocationApprovalPage : ContentPage
+	public partial class Transportation : ContentPage
 	{
-		public AllocationApprovalPage ()
+		public Transportation ()
 		{
 			InitializeComponent ();
 		}

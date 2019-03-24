@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,10 @@ namespace FulfillmentGo.Views.Pages
     {
         public PurchaseOrderTabs ()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzY2NzZAMzEzNjJlMzQyZTMwSjRNT1Rub3U1TS9QSDdWaTZxL2tlVGw3bVdoczlvVHFuYnR4UlhkNFFMTT0=");
             InitializeComponent();
-        }
-    }
+  
+         }
+
+     }
 }

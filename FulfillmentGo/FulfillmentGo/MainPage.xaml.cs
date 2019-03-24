@@ -19,7 +19,7 @@ namespace FulfillmentGo
             NavigationPage.SetHasNavigationBar(this, false);
             MasterBehavior = MasterBehavior.Popover;
             ((NavigationPage)Detail).BarBackgroundColor = Color.FromHex("#1F3138");
-            MenuPages.Add((int)MenuItemType.PurchaseOrderApproval, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Purchasing, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -28,34 +28,37 @@ namespace FulfillmentGo
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.PurchaseOrderApproval:
-                        MenuPages.Add(id, new NavigationPage(new PurchaseOrderApprovalPage()));
-                        break;
-                    case (int)MenuItemType.AllocationApproval:
-                        MenuPages.Add(id, new NavigationPage(new AllocationApprovalPage()));
-                        break;
-                    case (int)MenuItemType.StockTransferOrderApproval:
-                        MenuPages.Add(id, new NavigationPage(new StockTransferOrderApprovalPage()));
-                        break;
-                    case (int)MenuItemType.BusinessNotification:
-                        MenuPages.Add(id, new NavigationPage(new BusinessNotificationPage()));
-                        break;
-                    case (int)MenuItemType.GridPage:
-                        MenuPages.Add(id, new NavigationPage(new GridPage()));
-                        break;
-                    case (int)MenuItemType.ApprovalOrdersPage:
+                    
+                    case (int)MenuItemType.Purchasing:
                         MenuPages.Add(id, new NavigationPage(new PurchaseOrderTabs()));
                         break;
-                    case (int)MenuItemType.OrderDetailPage:
-                        MenuPages.Add(id, new NavigationPage(new OrderDetailPage()));
+                    case (int)MenuItemType.ListEnhanced:
+                        MenuPages.Add(id, new NavigationPage(new ListEnhanced()));
+                        break;
+                    case (int)MenuItemType.Pricing:
+                        MenuPages.Add(id, new NavigationPage(new Pricing()));
+                        break;
+                    case (int)MenuItemType.Promotion:
+                        MenuPages.Add(id, new NavigationPage(new Promotion()));
+                        break;
+                    case (int)MenuItemType.Markdown:
+                        MenuPages.Add(id, new NavigationPage(new Markdown()));
+                        break;
+                    case (int)MenuItemType.Transportation:
+                        MenuPages.Add(id, new NavigationPage(new Transportation()));
+                        break;
+                    case (int)MenuItemType.Sales:
+                        MenuPages.Add(id, new NavigationPage(new Sales()));
                         break;
                     case (int)MenuItemType.Logout:
                         await DisplayAlert("Alert", "Logged out successfully", "OK");
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
-                        
+                    case (int)MenuItemType.Mainmenu:
+                        MenuPages.Add(id, new NavigationPage(new Mainmenu()));
+                        break;
 
-}
+                }
             }
 
             var newPage = MenuPages[id];

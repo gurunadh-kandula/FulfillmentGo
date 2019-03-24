@@ -68,8 +68,8 @@ namespace FulfillmentGo.Views.Pages
             }
             var order = e.SelectedItem as OrderDetails;
             Navigation.PushModalAsync(new OrderDetailPage(order));
-            
-        }
+            listView.SelectedItem = null;
+       }
         /*void OnTapAsync(object sender, ItemTappedEventArgs e)
         {
             DisplayAlert("Item Selected", e.Item.ToString(), "Ok");

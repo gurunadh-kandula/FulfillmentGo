@@ -5,23 +5,23 @@
             x:Class="FulfillmentGo.Views.Pages.PurchaseOrderTabs" BarBackgroundColor="Transparent"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement ="Bottom"
-            android:TabbedPage.BarBackgroundColor="#000000"
+            android:TabbedPage.BarBackgroundColor="#33444B"
             android:TabbedPage.BarItemColor="#ffffff"
-            android:TabbedPage.BarSelectedItemColor="#FFD700">
+            android:TabbedPage.BarSelectedItemColor="#00B2FF" NavigationPage.HasNavigationBar="false" >
   <!--Pages can be added as references or inline-->
     <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
-        <NavigationPage Title="OpenOrdersPage" Icon="ic_action_drafts.png">
+        <NavigationPage Title="OpenOrders" Icon="ic_action_drafts.png" BarBackgroundColor="#33444B">
             <x:Arguments>
                 <views:OpenOrdersPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="ApprovedOrdersPage" Icon="ic_action_check_circle_outline.png">
+        <NavigationPage Title="ApprovedOrders" Icon="ic_action_check_circle_outline.png" BarBackgroundColor="#33444B">
             <x:Arguments>
                 <views:ApprovedOrdersPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="RejectedOrdersPage" Icon="ic_action_close.png">
+        <NavigationPage Title="RejectedOrders" Icon="ic_action_close.png" BarBackgroundColor="#33444B">
             <x:Arguments>
                 <views:RejectedOrdersPage />
             </x:Arguments>

@@ -16,5 +16,15 @@ namespace FulfillmentGo.Views.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+        void OnSelectionAsync(object sender, SelectedItemChangedEventArgs e)
+        {
+            /* if (e.SelectedItem == null)
+             {
+                 return;
+             }
+             var order = e.SelectedItem as OrderDetails;
+             Navigation.PushModalAsync(new OrderDetailPage(order));
+             listView.SelectedItem = null;*/
+        }
+    }
 }

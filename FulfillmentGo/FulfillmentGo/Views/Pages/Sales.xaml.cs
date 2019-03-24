@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FulfillmentGo.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class StockTransferOrderApprovalPage : ContentPage
+	public partial class Sales : ContentPage
 	{
-		public StockTransferOrderApprovalPage ()
+		public Sales ()
 		{
 			InitializeComponent ();
 		}

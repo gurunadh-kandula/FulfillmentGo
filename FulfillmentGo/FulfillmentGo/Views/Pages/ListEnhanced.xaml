@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="FulfillmentGo.Views.Pages.ListEnhanced">
+    <ContentPage.BindingContext>
+        <local:Orders x:Name="viewModel1" />
+    </ContentPage.BindingContext>
+    <StackLayout BackgroundColor="#2a3b41">
+        <syncfusion:SfListView x:Name="listView" ItemSize="85"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
+                 SwipeOffset="360" SwipeThreshold="30"
+                >
+            <syncfusion:SfListView.LeftSwipeTemplate>
+                <DataTemplate x:Name="LeftSwipeTemplate">
+                    <Grid>
+                        <Grid BackgroundColor="#1eea36" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image Grid.Column="0"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    WidthRequest="35"
+                    Source="whitereject.png" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.LeftSwipeTemplate>
+            <syncfusion:SfListView.RightSwipeTemplate>
+                <DataTemplate x:Name="RightSwipeTemplate">
+                    <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Image Grid.Column="0"
+                 Grid.Row="0"
+                 HeightRequest="50"
+                 WidthRequest="35"
+                 BackgroundColor="Transparent"
+                 Source="whiteapprove.png" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.RightSwipeTemplate>
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        
+                            <StackLayout BackgroundColor="#1F3138" Margin="0,5,0,5">
+
+                                <Label Text="{Binding OrderID,StringFormat='ORDER ID : {0}'}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
+                                <Label Text="{Binding Source,StringFormat='VENDOR : {0}'}" FontAttributes="Bold" TextColor="SkyBlue" FontSize="14"/>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                    <Label   Text="{Binding  Qty , StringFormat='Quantity : {0}'}"  WidthRequest="210" FontFamily="Arial" TextColor="White" FontSize="14" />
+                                    <Label   Text="{Binding OrderValue, StringFormat='Order value : {0}'}" FontFamily="Arial" TextColor="White" FontSize="14"/>
+                                </StackLayout>
+                            </StackLayout>
+                       
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </StackLayout>
+</ContentPage>

@@ -37,6 +37,11 @@ namespace FulfillmentGo.Models
         private double suppOrderQty;
 
         private double fwdBuyQty;
+        private long noOfTrucks;
+        private long noOfSKUs;
+
+
+       // private string company;
         public OrderDetails()
         {
 
@@ -44,7 +49,7 @@ namespace FulfillmentGo.Models
 
         public OrderDetails(String orderId, String source, String destination, double qty, String status, String arrivalDate,
             String notes, long delayDur, long needCovDur, long networkMinCovDur, long finalCovDur, double orderValue,
-            String networkMinStatus, double uom, double suppOrderQty, double fwdBuyQty)
+            String networkMinStatus, double uom, double suppOrderQty, double fwdBuyQty, long noOfTrucks, long noOfSKUs)
         {
             this.orderId = orderId;
             this.source = source;
@@ -62,6 +67,8 @@ namespace FulfillmentGo.Models
             this.uom = uom;
             this.suppOrderQty = suppOrderQty;
             this.fwdBuyQty = fwdBuyQty;
+            this.noOfTrucks=noOfTrucks;
+            this.noOfSKUs = noOfSKUs;
         }
         public String OrderID { get => orderId; set => orderId = value; }
         public String Source { get => source; set => source = value; }
@@ -84,7 +91,11 @@ namespace FulfillmentGo.Models
 
         public Double Uom { get => uom; set => uom = value; }
         public Double SuppOrderQty{ get => suppOrderQty; set => suppOrderQty = value; }
-        public Double FwdVuyQty{ get => fwdBuyQty; set => fwdBuyQty = value; }
+        public Double FwdBuyQty{ get => fwdBuyQty; set => fwdBuyQty = value; }
+        public long NoOfTrucks { get => noOfTrucks; set => noOfTrucks = value; }
+        public long NoOfSKUs { get => noOfSKUs; set => noOfSKUs = value; }
+
+
 
 
 

@@ -16,49 +16,41 @@
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="16.4.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="16.4.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="16.4.0.54" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.4.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.4.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="16.4.0.54" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\GridDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\GridPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\AllocationApprovalPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\ApprovalOrdersPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\ApprovedOrdersPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\BusinessNotificationPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\ItemsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\ListEnhanced.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\LogoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\OpenOrdersPage.xaml">
+    <EmbeddedResource Update="Views\Pages\Mainmenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Markdown.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\OrderDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\PurchaseOrderApprovalPage.xaml">
+    <EmbeddedResource Update="Views\Pages\Pricing.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Promotion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\PurchaseOrderTabs.xaml">
@@ -67,7 +59,10 @@
     <EmbeddedResource Update="Views\Pages\RejectedOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\StockTransferOrderApprovalPage.xaml">
+    <EmbeddedResource Update="Views\Pages\Sales.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Transportation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FulfillmentGo.Views
+namespace FulfillmentGo.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class GridDetailPage : ContentPage
+	public partial class Promotion : ContentPage
 	{
-		public GridDetailPage ()
+		public Promotion ()
 		{
 			InitializeComponent ();
 		}

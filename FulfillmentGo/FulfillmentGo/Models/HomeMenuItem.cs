@@ -6,13 +6,14 @@ namespace FulfillmentGo.Models
 {
     public enum MenuItemType
     {
-        PurchaseOrderApproval,
-        AllocationApproval,
-        StockTransferOrderApproval,
-        BusinessNotification,
-        GridPage,
-        ApprovalOrdersPage,
-        OrderDetailPage,
+        Mainmenu,
+        Purchasing,
+        Pricing,
+        Promotion,
+        Markdown,
+        Transportation,
+        Sales,
+        ListEnhanced,
         Logout
     }
 

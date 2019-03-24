@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FulfillmentGo.Views.Pages.RejectedOrdersPage" Title="RejectedOrdersPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
+             x:Class="FulfillmentGo.Views.Pages.RejectedOrdersPage" Title="RejectedOrders">
+    <ContentPage.BindingContext>
+        <local:RejectedOrders x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <StackLayout BackgroundColor="#2a3b41">
+        <ListView x:Name="listView" 
+                   ItemsSource="{Binding OrderCollection}"  RowHeight="85" ItemSelected="OnSelectionAsync">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell>
+                        <Frame Padding="0" Margin="0,5,0,5" HeightRequest="50" BackgroundColor="#1F3138">
+                            <StackLayout>
+
+                                <Label Text="{Binding OrderID,StringFormat='ORDER ID : {0}'}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
+                                <Label Text="{Binding Company,StringFormat='VENDOR : {0}'}" FontAttributes="Bold" TextColor="SkyBlue" FontSize="14"/>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                    <Label   Text="{Binding  Qty , StringFormat='Quantity : {0}'}"  WidthRequest="210" FontFamily="Arial" TextColor="White" FontSize="14" />
+                                    <Label   Text="{Binding OrderValue, StringFormat='Order value : {0}'}" FontFamily="Arial" TextColor="White" FontSize="14"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+
+                </DataTemplate >
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

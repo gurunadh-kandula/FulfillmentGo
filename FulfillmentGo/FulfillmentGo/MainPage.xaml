@@ -16,7 +16,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views1:PurchaseOrderApprovalPage/>
+                <views1:Mainmenu/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

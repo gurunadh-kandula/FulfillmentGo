@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FulfillmentGo.Views.Pages.Mainmenu">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand">
+             <Button BackgroundColor="Transparent" BorderColor="Black" HeightRequest="65" Image="exequick.png"/>
+            <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand" >
+              <Grid RowSpacing="30" ColumnSpacing="30" Padding="20,50,20,50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button CornerRadius="10" Clicked="Purchasing_clicked" Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="PURCHASING" FontSize="15"  Grid.Row="0" Grid.Column="0" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="purchasing.png"/>
+                <Button CornerRadius="10" Clicked="Button_Clicked" Padding="30,30,30,30" ContentLayout="Top, 10" TextColor="White" Text="PRICING" FontSize="15"  Grid.Row="0" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="pricing.png"/>
+                <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10" TextColor="White" Text="PROMOTION" FontSize="15"  Grid.Row="1" Grid.Column="0" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="Promotion.png"/>
+                <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="MARK DOWN" FontSize="15"  Grid.Row="1" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="markdown.png"/>
+                <Button CornerRadius="10"  Padding="10,30,10,30" ContentLayout="Top, -5"  TextColor="White" Text="TRANSPORTATION" FontSize="15"  Grid.Row="2" Grid.Column="0" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="transportation_g.png"/>
+                <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="SALES" FontSize="15"  Grid.Row="2" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="sales.png"/>
+                    </Grid>
+              </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

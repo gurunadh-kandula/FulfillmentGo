@@ -20,14 +20,13 @@ namespace FulfillmentGo.Views
             InitializeComponent();
 
             menuItems = new List<HomeMenuItem>
-            {
-                new HomeMenuItem {Id = MenuItemType.PurchaseOrderApproval, Title="Purchase Order Approval" },
-                new HomeMenuItem {Id = MenuItemType.AllocationApproval, Title="Allocation Approval" },
-                new HomeMenuItem {Id = MenuItemType.StockTransferOrderApproval, Title="Stock Transfer Approval" },
-                new HomeMenuItem {Id = MenuItemType.BusinessNotification, Title="Business Notification" },
-                new HomeMenuItem{Id = MenuItemType.GridPage, Title="Grid Page" },
-                new HomeMenuItem{Id = MenuItemType.ApprovalOrdersPage, Title="ApprovalOrdersPage" },
-                new HomeMenuItem{Id = MenuItemType.OrderDetailPage, Title="OrderDetailPage" },
+            {   new HomeMenuItem{Id = MenuItemType.Mainmenu, Title="Main menu" },
+                new HomeMenuItem{Id = MenuItemType.Purchasing, Title="Purchasing" },
+                new HomeMenuItem{Id = MenuItemType.Pricing, Title="Pricing" },
+                new HomeMenuItem{Id = MenuItemType.Promotion, Title="Promotion" },
+                new HomeMenuItem{Id = MenuItemType.Markdown, Title="Mark down" },
+                new HomeMenuItem{Id = MenuItemType.Sales, Title="Sales" },
+                new HomeMenuItem{Id = MenuItemType.ListEnhanced, Title="List Enhancement" },
                 new HomeMenuItem {Id = MenuItemType.Logout, Title="LOGOUT" },
                 
             };
