@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
-             x:Class="FulfillmentGo.Views.Pages.OrderDetailPage">
+             x:Class="FulfillmentGo.Views.Pages.OrderDetailPage" NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Content>
         <StackLayout x:Name="MainStack" VerticalOptions="FillAndExpand" >

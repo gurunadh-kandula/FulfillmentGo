@@ -26,7 +26,6 @@ namespace FulfillmentGo.Views
                 new HomeMenuItem{Id = MenuItemType.Promotion, Title="Promotion" },
                 new HomeMenuItem{Id = MenuItemType.Markdown, Title="Mark down" },
                 new HomeMenuItem{Id = MenuItemType.Sales, Title="Sales" },
-                new HomeMenuItem{Id = MenuItemType.ListEnhanced, Title="List Enhancement" },
                 new HomeMenuItem {Id = MenuItemType.Logout, Title="LOGOUT" },
                 
             };

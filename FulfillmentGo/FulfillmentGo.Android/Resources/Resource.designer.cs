@@ -1774,6 +1774,16 @@ namespace FulfillmentGo.Droid
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_valueChangeMode = global::FulfillmentGo.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode;
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermark = global::FulfillmentGo.Droid.Resource.Styleable.SfNumericTextBox_watermark;
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermarkColor = global::FulfillmentGo.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglecollapseicon = global::FulfillmentGo.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglevisibleicon = global::FulfillmentGo.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.popup_forms_android_close_icon = global::FulfillmentGo.Droid.Resource.Drawable.popup_forms_android_close_icon;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.popup_forms_android_shadow = global::FulfillmentGo.Droid.Resource.Drawable.popup_forms_android_shadow;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Id.BorderView = global::FulfillmentGo.Droid.Resource.Id.BorderView;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.String.accept = global::FulfillmentGo.Droid.Resource.String.accept;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.String.decline = global::FulfillmentGo.Droid.Resource.String.decline;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.String.library_name = global::FulfillmentGo.Droid.Resource.String.library_name;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.String.popup_message = global::FulfillmentGo.Droid.Resource.String.popup_message;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.String.title = global::FulfillmentGo.Droid.Resource.String.title;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FulfillmentGo.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -4660,26 +4670,26 @@ namespace FulfillmentGo.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020157
-			public const int avd_hide_password_1 = 2130837847;
-			
-			// aapt resource value: 0x7f020158
-			public const int avd_hide_password_2 = 2130837848;
-			
 			// aapt resource value: 0x7f020159
-			public const int avd_hide_password_3 = 2130837849;
+			public const int avd_hide_password_1 = 2130837849;
+			
+			// aapt resource value: 0x7f02015a
+			public const int avd_hide_password_2 = 2130837850;
+			
+			// aapt resource value: 0x7f02015b
+			public const int avd_hide_password_3 = 2130837851;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f02015a
-			public const int avd_show_password_1 = 2130837850;
-			
-			// aapt resource value: 0x7f02015b
-			public const int avd_show_password_2 = 2130837851;
-			
 			// aapt resource value: 0x7f02015c
-			public const int avd_show_password_3 = 2130837852;
+			public const int avd_show_password_1 = 2130837852;
+			
+			// aapt resource value: 0x7f02015d
+			public const int avd_show_password_2 = 2130837853;
+			
+			// aapt resource value: 0x7f02015e
+			public const int avd_show_password_3 = 2130837854;
 			
 			// aapt resource value: 0x7f020056
 			public const int btn_checkbox = 2130837590;
@@ -5386,11 +5396,11 @@ namespace FulfillmentGo.Droid
 			// aapt resource value: 0x7f020140
 			public const int notification_icon_background = 2130837824;
 			
-			// aapt resource value: 0x7f020155
-			public const int notification_template_icon_bg = 2130837845;
+			// aapt resource value: 0x7f020157
+			public const int notification_template_icon_bg = 2130837847;
 			
-			// aapt resource value: 0x7f020156
-			public const int notification_template_icon_low_bg = 2130837846;
+			// aapt resource value: 0x7f020158
+			public const int notification_template_icon_low_bg = 2130837848;
 			
 			// aapt resource value: 0x7f020141
 			public const int notification_tile_bg = 2130837825;
@@ -5399,58 +5409,64 @@ namespace FulfillmentGo.Droid
 			public const int notify_panel_notification_icon_bg = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int pricing = 2130837827;
+			public const int popup_forms_android_close_icon = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int Promotion = 2130837828;
+			public const int popup_forms_android_shadow = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int purchasing = 2130837829;
+			public const int pricing = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int quantity = 2130837830;
+			public const int Promotion = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int reject = 2130837831;
+			public const int purchasing = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int review = 2130837832;
+			public const int quantity = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int sales = 2130837833;
+			public const int reject = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int SKU = 2130837834;
+			public const int review = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int source = 2130837835;
+			public const int sales = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int status = 2130837836;
+			public const int SKU = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int textbox = 2130837837;
+			public const int source = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int tooltip_frame_dark = 2130837838;
+			public const int status = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int tooltip_frame_light = 2130837839;
+			public const int textbox = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int transportation = 2130837840;
+			public const int tooltip_frame_dark = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int transportation_g = 2130837841;
+			public const int tooltip_frame_light = 2130837841;
 			
 			// aapt resource value: 0x7f020152
-			public const int truck = 2130837842;
+			public const int transportation = 2130837842;
 			
 			// aapt resource value: 0x7f020153
-			public const int whiteapprove = 2130837843;
+			public const int transportation_g = 2130837843;
 			
 			// aapt resource value: 0x7f020154
-			public const int whitereject = 2130837844;
+			public const int truck = 2130837844;
+			
+			// aapt resource value: 0x7f020155
+			public const int whiteapprove = 2130837845;
+			
+			// aapt resource value: 0x7f020156
+			public const int whitereject = 2130837846;
 			
 			static Drawable()
 			{
@@ -5467,6 +5483,9 @@ namespace FulfillmentGo.Droid
 			
 			// aapt resource value: 0x7f090032
 			public const int ALT = 2131296306;
+			
+			// aapt resource value: 0x7f090114
+			public const int BorderView = 2131296532;
 			
 			// aapt resource value: 0x7f090033
 			public const int CTRL = 2131296307;
@@ -6652,14 +6671,14 @@ namespace FulfillmentGo.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f0a003e
-			public const int ApplicationName = 2131361854;
+			// aapt resource value: 0x7f0a0042
+			public const int ApplicationName = 2131361858;
 			
-			// aapt resource value: 0x7f0a003d
-			public const int Hello = 2131361853;
+			// aapt resource value: 0x7f0a0041
+			public const int Hello = 2131361857;
 			
-			// aapt resource value: 0x7f0a003f
-			public const int Load_More = 2131361855;
+			// aapt resource value: 0x7f0a0043
+			public const int Load_More = 2131361859;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int abc_action_bar_home_description = 2131361813;
@@ -6748,29 +6767,35 @@ namespace FulfillmentGo.Droid
 			// aapt resource value: 0x7f0a0025
 			public const int abc_toolbar_collapse_description = 2131361829;
 			
+			// aapt resource value: 0x7f0a003f
+			public const int accept = 2131361855;
+			
 			// aapt resource value: 0x7f0a0033
 			public const int appbar_scrolling_view_behavior = 2131361843;
 			
 			// aapt resource value: 0x7f0a0034
 			public const int bottom_sheet_behavior = 2131361844;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int cancel_drop = 2131361857;
+			// aapt resource value: 0x7f0a0045
+			public const int cancel_drop = 2131361861;
 			
 			// aapt resource value: 0x7f0a0035
 			public const int character_counter_pattern = 2131361845;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int drop_above = 2131361858;
+			// aapt resource value: 0x7f0a0040
+			public const int decline = 2131361856;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int drop_below = 2131361859;
+			// aapt resource value: 0x7f0a0046
+			public const int drop_above = 2131361862;
+			
+			// aapt resource value: 0x7f0a0047
+			public const int drop_below = 2131361863;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int library_name = 2131361852;
 			
-			// aapt resource value: 0x7f0a0040
-			public const int load_more_items = 2131361856;
+			// aapt resource value: 0x7f0a0044
+			public const int load_more_items = 2131361860;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int mr_button_content_description = 2131361792;
@@ -6850,38 +6875,44 @@ namespace FulfillmentGo.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int path_password_strike_through = 2131361850;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int q = 2131361861;
+			// aapt resource value: 0x7f0a003e
+			public const int popup_message = 2131361854;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int quarter = 2131361860;
+			// aapt resource value: 0x7f0a0049
+			public const int q = 2131361865;
+			
+			// aapt resource value: 0x7f0a0048
+			public const int quarter = 2131361864;
 			
 			// aapt resource value: 0x7f0a0026
 			public const int search_menu_title = 2131361830;
 			
-			// aapt resource value: 0x7f0a004b
-			public const int sfchart_close_label = 2131361867;
-			
-			// aapt resource value: 0x7f0a0048
-			public const int sfchart_high_label = 2131361864;
-			
-			// aapt resource value: 0x7f0a0049
-			public const int sfchart_low_label = 2131361865;
-			
-			// aapt resource value: 0x7f0a004a
-			public const int sfchart_open_label = 2131361866;
+			// aapt resource value: 0x7f0a004f
+			public const int sfchart_close_label = 2131361871;
 			
 			// aapt resource value: 0x7f0a004c
-			public const int sfchart_others_label = 2131361868;
+			public const int sfchart_high_label = 2131361868;
+			
+			// aapt resource value: 0x7f0a004d
+			public const int sfchart_low_label = 2131361869;
+			
+			// aapt resource value: 0x7f0a004e
+			public const int sfchart_open_label = 2131361870;
+			
+			// aapt resource value: 0x7f0a0050
+			public const int sfchart_others_label = 2131361872;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int status_bar_notification_info_overflow = 2131361851;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int w = 2131361863;
+			// aapt resource value: 0x7f0a003d
+			public const int title = 2131361853;
 			
-			// aapt resource value: 0x7f0a0046
-			public const int week = 2131361862;
+			// aapt resource value: 0x7f0a004b
+			public const int w = 2131361867;
+			
+			// aapt resource value: 0x7f0a004a
+			public const int week = 2131361866;
 			
 			static String()
 			{

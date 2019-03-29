@@ -13,7 +13,6 @@ namespace FulfillmentGo.Models
         Markdown,
         Transportation,
         Sales,
-        ListEnhanced,
         Logout
     }
 

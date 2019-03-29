@@ -12,14 +12,14 @@ namespace FulfillmentGo
 {
     public partial class MainPage : MasterDetailPage
     {
-        Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+       public Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             MasterBehavior = MasterBehavior.Popover;
             ((NavigationPage)Detail).BarBackgroundColor = Color.FromHex("#1F3138");
-            MenuPages.Add((int)MenuItemType.Purchasing, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Mainmenu, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -31,9 +31,6 @@ namespace FulfillmentGo
                     
                     case (int)MenuItemType.Purchasing:
                         MenuPages.Add(id, new NavigationPage(new PurchaseOrderTabs()));
-                        break;
-                    case (int)MenuItemType.ListEnhanced:
-                        MenuPages.Add(id, new NavigationPage(new ListEnhanced()));
                         break;
                     case (int)MenuItemType.Pricing:
                         MenuPages.Add(id, new NavigationPage(new Pricing()));

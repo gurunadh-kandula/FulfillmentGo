@@ -6,7 +6,7 @@
         <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand">
              <Button BackgroundColor="Transparent" BorderColor="Black" HeightRequest="65" Image="exequick.png"/>
             <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand" >
-              <Grid RowSpacing="30" ColumnSpacing="30" Padding="20,50,20,50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+              <Grid RowSpacing="30" ColumnSpacing="30" Padding="10,20,10,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="*" />
                     <RowDefinition  Height="*" />

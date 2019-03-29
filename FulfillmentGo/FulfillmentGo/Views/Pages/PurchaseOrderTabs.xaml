@@ -11,17 +11,17 @@
   <!--Pages can be added as references or inline-->
     <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
-        <NavigationPage Title="OpenOrders" Icon="ic_action_drafts.png" BarBackgroundColor="#33444B">
+        <NavigationPage Title="Open Orders" Icon="ic_action_drafts.png" BarBackgroundColor="#33444B">
             <x:Arguments>
-                <views:OpenOrdersPage />
+                <views:ListEnhanced />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="ApprovedOrders" Icon="ic_action_check_circle_outline.png" BarBackgroundColor="#33444B">
+        <NavigationPage Title="Approved Orders" Icon="ic_action_check_circle_outline.png" BarBackgroundColor="#33444B">
             <x:Arguments>
                 <views:ApprovedOrdersPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="RejectedOrders" Icon="ic_action_close.png" BarBackgroundColor="#33444B">
+        <NavigationPage Title="Rejected Orders" Icon="ic_action_close.png" BarBackgroundColor="#33444B">
             <x:Arguments>
                 <views:RejectedOrdersPage />
             </x:Arguments>
