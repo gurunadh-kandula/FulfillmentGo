@@ -4,7 +4,7 @@
              x:Class="FulfillmentGo.Views.Pages.Mainmenu">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand">
-             <Button BackgroundColor="Transparent" BorderColor="Black" HeightRequest="65" Image="exequick.png"/>
+             <Button BackgroundColor="Transparent" BorderColor="Black" HeightRequest="78" Image="company.png"/>
             <StackLayout BackgroundColor="#1F3138" VerticalOptions="FillAndExpand" >
               <Grid RowSpacing="30" ColumnSpacing="30" Padding="10,20,10,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
                 <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10" TextColor="White" Text="PROMOTION" FontSize="15"  Grid.Row="1" Grid.Column="0" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="Promotion.png"/>
                 <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="MARK DOWN" FontSize="15"  Grid.Row="1" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="markdown.png"/>
                 <Button CornerRadius="10"  Padding="10,30,10,30" ContentLayout="Top, -5"  TextColor="White" Text="TRANSPORTATION" FontSize="15"  Grid.Row="2" Grid.Column="0" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="transportation_g.png"/>
-                <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="SALES" FontSize="15"  Grid.Row="2" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="sales.png"/>
+                <Button CornerRadius="10"  Padding="30,30,30,30" ContentLayout="Top, 10"  TextColor="White" Text="ALLOCATION" FontSize="15"  Grid.Row="2" Grid.Column="1" BackgroundColor="#2a3b41" BorderColor="Black" FontFamily="Arial" Image="Allocation.png"/>
                     </Grid>
               </StackLayout>
         </StackLayout>

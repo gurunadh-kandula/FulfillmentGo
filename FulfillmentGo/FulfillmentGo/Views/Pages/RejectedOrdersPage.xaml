@@ -2,32 +2,118 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
-             x:Class="FulfillmentGo.Views.Pages.RejectedOrdersPage" Title="RejectedOrders">
-    <ContentPage.BindingContext>
+             x:Class="FulfillmentGo.Views.Pages.RejectedOrdersPage" Title="RejectedOrders"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:labelTextColorSample1="clr-namespace:FulfillmentGo.Views.Pages"
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable">
+    <!--<ContentPage.BindingContext>
         <local:RejectedOrders x:Name="viewModel" />
-    </ContentPage.BindingContext>
-    <StackLayout BackgroundColor="#2a3b41">
-        <ListView x:Name="listView" 
-                   ItemsSource="{Binding OrderCollection}"  RowHeight="85" ItemSelected="OnSelectionAsync">
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <ViewCell>
-                        <Frame Padding="0" Margin="0,5,0,5" HeightRequest="50" BackgroundColor="#1F3138">
-                            <StackLayout>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <labelTextColorSample1:StringToColorConverter x:Key="StringToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <sfPopup:SfPopupLayout x:Name="popupLayout">
+        <sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:PopupView AnimationMode="Fade" ShowFooter="False" >
+                <sfPopup:PopupView.ContentTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Notes}" 
+                           HorizontalTextAlignment="Center"  BackgroundColor="White"
+                           WidthRequest="260"
+                           HorizontalOptions="FillAndExpand"/>
+                    </DataTemplate>
+                </sfPopup:PopupView.ContentTemplate>
+                <sfPopup:PopupView.HeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="NOTES" 
+                               FontAttributes="Bold"
+                              
+                               FontSize="16"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                                
+                               />
+                    </DataTemplate>
+                </sfPopup:PopupView.HeaderTemplate>
+            </sfPopup:PopupView>
+        </sfPopup:SfPopupLayout.PopupView>
+        <sfPopup:SfPopupLayout.Content>
+            <StackLayout BackgroundColor="#2a3b41">
+                <syncfusion:SfListView x:Name="listView" ItemSize="70"  ItemsSource="{Binding OrderCollection}"  
+                 SwipeOffset="100" SwipeThreshold="30" >
+                    <syncfusion:SfListView.DataSource>
+                        <data:DataSource>
+                            <data:DataSource.SortDescriptors>
+                                <data:SortDescriptor PropertyName="Urgency" Direction="Descending"/>
+                            </data:DataSource.SortDescriptors>
+                        </data:DataSource>
+                    </syncfusion:SfListView.DataSource>
+                    <!--<syncfusion:SfListView.LeftSwipeTemplate>
+                        <DataTemplate x:Name="LeftSwipeTemplate">
+                            <Grid BackgroundColor="#1eea36" HorizontalOptions="Fill" VerticalOptions="Fill">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image Grid.Column="0"
+                 Grid.Row="0"
+                 HeightRequest="50"
+                 WidthRequest="35"
+                 BackgroundColor="Transparent"
+                 Source="whiteapprove.png" />
+                                </Grid>
+                            </Grid>
 
-                                <Label Text="{Binding OrderID,StringFormat='ORDER ID : {0}'}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
-                                <Label Text="{Binding Company,StringFormat='VENDOR : {0}'}" FontAttributes="Bold" TextColor="SkyBlue" FontSize="14"/>
+                        </DataTemplate>
+                    </syncfusion:SfListView.LeftSwipeTemplate>
+                    <syncfusion:SfListView.RightSwipeTemplate>
+                        <DataTemplate x:Name="RightSwipeTemplate">
+                            <Grid>
+                                <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                        <Image Grid.Column="0"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    WidthRequest="35"
+                    Source="whitereject.png" />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfListView.RightSwipeTemplate>-->
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-                                    <Label   Text="{Binding  Qty , StringFormat='Quantity : {0}'}"  WidthRequest="210" FontFamily="Arial" TextColor="White" FontSize="14" />
-                                    <Label   Text="{Binding OrderValue, StringFormat='Order value : {0}'}" FontFamily="Arial" TextColor="White" FontSize="14"/>
+                                <StackLayout BackgroundColor="#232b2b" Margin="0,5,0,5">
+                                    <Grid>
+                                        <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                                <Label Text="{Binding Source}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
+                                                <!--<Label Text="PROMOTIONAL" FontAttributes="Bold" TextColor="White" FontSize="16"/>-->
+                                                <Label   Text="{Binding OrderID}" FontAttributes="Bold" FontFamily="Arial" TextColor="White" FontSize="16"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                                <Label   Text="{Binding  Qty , StringFormat='Qty : {0}'}" FontAttributes="Bold" WidthRequest="210" FontFamily="Arial" TextColor="SkyBlue" FontSize="16" />
+                                                <Label   Text="{Binding OrderValue, StringFormat='${0}'}" FontAttributes="Bold" FontFamily="Arial" TextColor="SkyBlue" FontSize="16"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" >
+                                            <BoxView Color="{Binding Urgency,Converter={StaticResource StringToColorConverter}}"
+                                                    WidthRequest="5"
+                                                   HeightRequest="55"
+                                                  VerticalOptions="FillAndExpand"
+                                                   HorizontalOptions="End" />
+                                        </StackLayout>
+                                    </Grid>
                                 </StackLayout>
-                            </StackLayout>
-                        </Frame>
-                    </ViewCell>
 
-                </DataTemplate >
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </StackLayout>
+        </sfPopup:SfPopupLayout.Content>
+    </sfPopup:SfPopupLayout>
 </ContentPage>

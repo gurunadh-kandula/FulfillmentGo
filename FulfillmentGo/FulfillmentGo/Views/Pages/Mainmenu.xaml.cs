@@ -10,16 +10,19 @@ using Xamarin.Forms.Xaml;
 namespace FulfillmentGo.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
+
 	public partial class Mainmenu : ContentPage
-	{
-		public Mainmenu ()
+    {
+       // MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        public Mainmenu ()
 		{
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzY2NzZAMzEzNjJlMzQyZTMwSjRNT1Rub3U1TS9QSDdWaTZxL2tlVGw3bVdoczlvVHFuYnR4UlhkNFFMTT0=");
             InitializeComponent ();
 		}
         public async void Purchasing_clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PurchaseOrderTabs());
+             await Navigation.PushAsync(new PurchaseOrderTabs());
+            //await RootPage.NavigateFromMenu(1);
             //await new MainPage().NavigateFromMenu(2);
         }
 

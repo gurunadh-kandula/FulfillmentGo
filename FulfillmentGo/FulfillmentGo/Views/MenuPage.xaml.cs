@@ -41,5 +41,10 @@ namespace FulfillmentGo.Views
                 await RootPage.NavigateFromMenu(id);
             };
         }
+        public ListView listView()
+        {
+            return ListViewMenu;
+        } 
     }
+
 }

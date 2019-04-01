@@ -39,7 +39,8 @@ namespace FulfillmentGo.Models
         private double fwdBuyQty;
         private long noOfTrucks;
         private long noOfSKUs;
-
+        private String urgency;
+        private String orderType;
 
        // private string company;
         public OrderDetails()
@@ -49,7 +50,7 @@ namespace FulfillmentGo.Models
 
         public OrderDetails(String orderId, String source, String destination, double qty, String status, String arrivalDate,
             String notes, long delayDur, long needCovDur, long networkMinCovDur, long finalCovDur, double orderValue,
-            String networkMinStatus, double uom, double suppOrderQty, double fwdBuyQty, long noOfTrucks, long noOfSKUs)
+            String networkMinStatus, double uom, double suppOrderQty, double fwdBuyQty, long noOfTrucks, long noOfSKUs,String urgency,String orderType)
         {
             this.orderId = orderId;
             this.source = source;
@@ -69,6 +70,8 @@ namespace FulfillmentGo.Models
             this.fwdBuyQty = fwdBuyQty;
             this.noOfTrucks=noOfTrucks;
             this.noOfSKUs = noOfSKUs;
+            this.urgency = urgency;
+            this.orderType = orderType;
         }
         public String OrderID { get => orderId; set => orderId = value; }
         public String Source { get => source; set => source = value; }
@@ -95,8 +98,9 @@ namespace FulfillmentGo.Models
         public long NoOfTrucks { get => noOfTrucks; set => noOfTrucks = value; }
         public long NoOfSKUs { get => noOfSKUs; set => noOfSKUs = value; }
 
+        public String Urgency { get => urgency; set => urgency = value; }
 
-
+        public String OrderType { get => orderType; set => orderType = value; }
 
 
     }

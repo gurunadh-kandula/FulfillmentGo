@@ -38,14 +38,13 @@ namespace FulfillmentGo.ViewModels
         public async Task<ObservableCollection<OrderDetails>> GenerateOrders()
         {
 
-            /* HttpClient client = new HttpClient();
-              var response = await client.GetStringAsync("http://vdmi-gurram:8080/getOpenOrderDetails");
-             orderCollection= JsonConvert.DeserializeObject<ObservableCollection<OrderDetails>>(response);*/
+           
 
             HttpClient client = new HttpClient();
             try
             {
-                var response = await client.GetStringAsync("http://10.156.11.183:8080/getOpenOrderDetails");
+                var url = "http://10.156.11.183:8080/getOpenOrderDetails/venu/Open";
+                var response = await client.GetStringAsync(url);
 
                 Console.Write(response);
                 return JsonConvert.DeserializeObject<ObservableCollection<OrderDetails>>(response);

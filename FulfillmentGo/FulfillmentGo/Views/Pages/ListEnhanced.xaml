@@ -3,12 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FulfillmentGo.ViewModels"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
-             x:Class="FulfillmentGo.Views.Pages.ListEnhanced" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" Title="OpenOrders">
+              x:Class="FulfillmentGo.Views.Pages.ListEnhanced" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:labelTextColorSample1="clr-namespace:FulfillmentGo.Views.Pages"
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable" Title="OpenOrders">
     <!--<ContentPage.BindingContext>
-        <local:Orders x:Name="viewModel1" />
+        <local:Orders x:Name="viewModel" />
     </ContentPage.BindingContext>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <labelTextColorSample1:StringToColorConverter x:Key="StringToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <sfPopup:SfPopupLayout x:Name="popupLayout">
-        <sfPopup:SfPopupLayout.PopupView>
+        <!--<sfPopup:SfPopupLayout.PopupView>
             <sfPopup:PopupView AnimationMode="Fade" ShowFooter="False" >
                 <sfPopup:PopupView.ContentTemplate>
                     <DataTemplate>
@@ -31,13 +38,36 @@
                     </DataTemplate>
                 </sfPopup:PopupView.HeaderTemplate>
             </sfPopup:PopupView>
-        </sfPopup:SfPopupLayout.PopupView>
+        </sfPopup:SfPopupLayout.PopupView>-->
         <sfPopup:SfPopupLayout.Content>
             <StackLayout BackgroundColor="#2a3b41">
-        <syncfusion:SfListView x:Name="listView" ItemSize="85"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
-                 SwipeOffset="100" SwipeThreshold="30" ItemTapped="listView_ItemTapped" ItemHolding="ListView_ItemHolding"
-                >
-            <syncfusion:SfListView.LeftSwipeTemplate>
+                <SearchBar BackgroundColor="White" x:Name="filterText" HeightRequest="40" PlaceholderColor="Black"
+           Placeholder="Search here to filter"
+           TextChanged="OnFilterTextChanged"  TextColor="Black" CancelButtonColor="Black"  />
+                <syncfusion:SfListView x:Name="listView" ItemSize="70"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
+                 SwipeOffset="360" SwipeThreshold="80" ItemTapped="listView_ItemTapped" ItemHolding="ListView_ItemHolding"
+               Swiping="ListView_Swiping" SwipeEnded="ListView_SwipeEnded"  >
+                    <!--<syncfusion:SfListView.DataSource>
+                        <data:DataSource>
+                            <data:DataSource.GroupDescriptors>
+                                <data:GroupDescriptor PropertyName="Urgency"/>
+                            </data:DataSource.GroupDescriptors>
+                        </data:DataSource>
+                    </syncfusion:SfListView.DataSource>
+                    <syncfusion:SfListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout HeightRequest="-50">
+                            </StackLayout>
+                        </DataTemplate>
+                    </syncfusion:SfListView.GroupHeaderTemplate>-->
+                    <syncfusion:SfListView.DataSource>
+                        <data:DataSource>
+                            <data:DataSource.SortDescriptors>
+                                <data:SortDescriptor PropertyName="Urgency" Direction="Descending"/>
+                            </data:DataSource.SortDescriptors>
+                        </data:DataSource>
+                    </syncfusion:SfListView.DataSource>
+                    <syncfusion:SfListView.LeftSwipeTemplate>
                 <DataTemplate x:Name="LeftSwipeTemplate">
                     <Grid BackgroundColor="#1eea36" HorizontalOptions="Fill" VerticalOptions="Fill">
                         <Grid VerticalOptions="Center" HorizontalOptions="Center">
@@ -71,17 +101,29 @@
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        
-                            <StackLayout BackgroundColor="#1F3138" Margin="0,5,0,5">
 
-                                <Label Text="{Binding OrderID,StringFormat='ORDER ID : {0}'}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
-                                <Label Text="{Binding Source,StringFormat='VENDOR : {0}'}" FontAttributes="Bold" TextColor="SkyBlue" FontSize="14"/>
-
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-                                    <Label   Text="{Binding  Qty , StringFormat='Quantity : {0}'}"  WidthRequest="210" FontFamily="Arial" TextColor="White" FontSize="14" />
-                                    <Label   Text="{Binding OrderValue, StringFormat='Order value : {0}'}" FontFamily="Arial" TextColor="White" FontSize="14"/>
+                                <StackLayout BackgroundColor="#232b2b" Margin="0,5,0,5">
+                                    <Grid>
+                                        <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                                <Label Text="{Binding Source}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
+                                                <!--<Label Text="PROMOTIONAL" FontAttributes="Bold" TextColor="White" FontSize="16"/>-->
+                                                <Label   Text="{Binding OrderID}" FontAttributes="Bold" FontFamily="Arial" TextColor="White" FontSize="16"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                                <Label   Text="{Binding  Qty , StringFormat='Qty : {0}'}" FontAttributes="Bold" WidthRequest="210" FontFamily="Arial" TextColor="SkyBlue" FontSize="16" />
+                                                <Label   Text="{Binding OrderValue, StringFormat='${0}'}" FontAttributes="Bold" FontFamily="Arial" TextColor="SkyBlue" FontSize="16"/>
+                                             </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" >
+                                            <BoxView Color="{Binding Urgency,Converter={StaticResource StringToColorConverter}}"
+                                                    WidthRequest="5"
+                                                   HeightRequest="55"
+                                                  VerticalOptions="FillAndExpand"
+                                                   HorizontalOptions="End" />
+                                        </StackLayout>
+                                    </Grid>
                                 </StackLayout>
-                            </StackLayout>
                        
                     </Grid>
                 </DataTemplate>

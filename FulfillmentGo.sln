@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FulfillmentGo.Android", "Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FulfillmentGo.iOS", "FulfillmentGo\FulfillmentGo.iOS\FulfillmentGo.iOS.csproj", "{8B2013B1-80E1-4987-9399-A5726E3BE065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FulfillmentGo", "FulfillmentGo\FulfillmentGo\FulfillmentGo.csproj", "{77633349-64DC-49B4-B33D-BA1193475F19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FulfillmentGo", "FulfillmentGo\FulfillmentGo\FulfillmentGo.csproj", "{77633349-64DC-49B4-B33D-BA1193475F19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,9 +7,8 @@
             android:TabbedPage.ToolbarPlacement ="Bottom"
             android:TabbedPage.BarBackgroundColor="#33444B"
             android:TabbedPage.BarItemColor="#ffffff"
-            android:TabbedPage.BarSelectedItemColor="#00B2FF" NavigationPage.HasNavigationBar="false" >
-  <!--Pages can be added as references or inline-->
-    <!--Pages can be added as references or inline-->
+            android:TabbedPage.BarSelectedItemColor="#00B2FF" NavigationPage.HasNavigationBar="false">
+ 
     <TabbedPage.Children>
         <NavigationPage Title="Open Orders" Icon="ic_action_drafts.png" BarBackgroundColor="#33444B">
             <x:Arguments>

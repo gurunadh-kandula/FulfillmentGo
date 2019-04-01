@@ -1,4 +1,5 @@
 ﻿using FulfillmentGo.Views;
+using FulfillmentGo.Views.Pages;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ namespace FulfillmentGo
         {
             InitializeComponent();
             MainPage = new MainPage();
-
+            //MainPage = new NavigationPage(new Mainmenu());
         }
 
         protected override void OnStart()
