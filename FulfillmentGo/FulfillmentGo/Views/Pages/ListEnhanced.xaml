@@ -44,8 +44,12 @@
                 <SearchBar BackgroundColor="White" x:Name="filterText" HeightRequest="40" PlaceholderColor="Black"
            Placeholder="Search here to filter"
            TextChanged="OnFilterTextChanged"  TextColor="Black" CancelButtonColor="Black"  />
-                <syncfusion:SfListView x:Name="listView" ItemSize="70"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
-                 SwipeOffset="360" SwipeThreshold="80" ItemTapped="listView_ItemTapped" ItemHolding="ListView_ItemHolding"
+                <Grid>
+                    <Button Text="CAT:Clothing" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start"/>
+                    <Button Text="OTB: $10,000" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start" />
+                </Grid>
+                <syncfusion:SfListView x:Name="listView" ItemSize="88"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
+                 SwipeOffset="360" SwipeThreshold="210" ItemTapped="listView_ItemTapped" ItemHolding="ListView_ItemHolding"
                Swiping="ListView_Swiping" SwipeEnded="ListView_SwipeEnded"  >
                     <!--<syncfusion:SfListView.DataSource>
                         <data:DataSource>
@@ -108,17 +112,19 @@
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
                                                 <Label Text="{Binding Source}" WidthRequest="210"  FontAttributes="Bold" TextColor="White" FontSize="16" />
                                                 <!--<Label Text="PROMOTIONAL" FontAttributes="Bold" TextColor="White" FontSize="16"/>-->
-                                                <Label   Text="{Binding OrderID}" FontAttributes="Bold" FontFamily="Arial" TextColor="White" FontSize="16"/>
+                                                <Label   Text="{Binding OrderType}" FontAttributes="Bold" FontFamily="Arial" TextColor="White" FontSize="16"/>
+                                                <!--<Button   WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent" Image="addnote.png"  />-->
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
                                                 <Label   Text="{Binding  Qty , StringFormat='Qty : {0}'}" FontAttributes="Bold" WidthRequest="210" FontFamily="Arial" TextColor="SkyBlue" FontSize="16" />
                                                 <Label   Text="{Binding OrderValue, StringFormat='${0}'}" FontAttributes="Bold" FontFamily="Arial" TextColor="SkyBlue" FontSize="16"/>
                                              </StackLayout>
+                                            <Label   Text="{Binding OrderID}" FontAttributes="Bold" FontFamily="Arial" TextColor="White" FontSize="16"/>
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" >
                                             <BoxView Color="{Binding Urgency,Converter={StaticResource StringToColorConverter}}"
                                                     WidthRequest="5"
-                                                   HeightRequest="55"
+                                                   HeightRequest="65"
                                                   VerticalOptions="FillAndExpand"
                                                    HorizontalOptions="End" />
                                         </StackLayout>

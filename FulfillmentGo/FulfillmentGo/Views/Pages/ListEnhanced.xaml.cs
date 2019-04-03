@@ -13,6 +13,7 @@ using Syncfusion.ListView.XForms;
 using System.Globalization;
 using System.Net.Http;
 using System.Net;
+using Syncfusion.SfChart.XForms;
 
 namespace FulfillmentGo.Views.Pages
 {
@@ -22,7 +23,7 @@ namespace FulfillmentGo.Views.Pages
         public static Orders orders { get; set; }
         public List<String> urgencyColor { get; set; }
         private SearchBar searchBar;
-
+      
         public ListEnhanced()
         {
             InitializeComponent();
@@ -78,7 +79,7 @@ namespace FulfillmentGo.Views.Pages
         }
         private async  void ListView_SwipeEnded(object sender, SwipeEndedEventArgs e)
         {
-            var orderDetails = (e.ItemData) as OrderDetails;
+            var orderDetails =(e.ItemData) as OrderDetails;
             String orderid = orderDetails.OrderID;
             HttpClient client = new HttpClient();
             if (e.SwipeOffset >= 360)
@@ -101,7 +102,8 @@ namespace FulfillmentGo.Views.Pages
                     {
                         if (ListEnhanced.orders.OrderCollection[i].OrderID.Equals(orderid))
                         {
-                            ApprovedOrdersPage.approvedOrders.OrderCollection.Add(ListEnhanced.orders.OrderCollection[i]);
+                            //ApprovedOrdersPage.approvedOrders.OrderCollection.Add(ListEnhanced.orders.OrderCollection[i]);
+                            ApprovedOrdersPage.approvedOrders.OrderCollection.Insert(0,ListEnhanced.orders.OrderCollection[i]);
                             ListEnhanced.orders.OrderCollection.Remove(ListEnhanced.orders.OrderCollection[i]);
 
                         }
@@ -123,7 +125,8 @@ namespace FulfillmentGo.Views.Pages
                     {
                         if (ListEnhanced.orders.OrderCollection[i].OrderID.Equals(orderid))
                         {
-                            RejectedOrdersPage.rejectedOrders.OrderCollection.Add(ListEnhanced.orders.OrderCollection[i]);
+                            //RejectedOrdersPage.rejectedOrders.OrderCollection.Add(ListEnhanced.orders.OrderCollection[i]);
+                            RejectedOrdersPage.rejectedOrders.OrderCollection.Insert(0,ListEnhanced.orders.OrderCollection[i]);
                             ListEnhanced.orders.OrderCollection.Remove(ListEnhanced.orders.OrderCollection[i]);
 
                         }
@@ -151,8 +154,10 @@ namespace FulfillmentGo.Views.Pages
         private void listView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
             OrderDetailPage newPage = new OrderDetailPage();
-            newPage.BindingContext = e.ItemData;
+            
+            newPage.BindingContext = (e.ItemData) as OrderDetails;
             newPage.order1 = (e.ItemData) as OrderDetails;
+           
             Navigation.PushModalAsync(newPage);
 
 

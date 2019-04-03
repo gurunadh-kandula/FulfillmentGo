@@ -69,6 +69,9 @@
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
       <Version>16.4.0.54</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Core">
+      <Version>16.4.0.54</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
       <Version>16.4.0.54</Version>
     </PackageReference>
@@ -98,6 +101,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\drawable\Orders.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -140,9 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_action_drafts.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\money.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\money2.png" />
@@ -224,6 +225,24 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\exequicklogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\reopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\orderId.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ORDER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\addnote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

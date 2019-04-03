@@ -5,30 +5,149 @@
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              x:Class="FulfillmentGo.Views.Pages.OrderDetailPage" NavigationPage.HasNavigationBar="false">
-    <sfPopup:SfPopupLayout x:Name="popupLayoutApprove">
+    <sfPopup:SfPopupLayout x:Name="popupLayout" >
         <sfPopup:SfPopupLayout.Content>
             
         <StackLayout x:Name="MainStack" VerticalOptions="FillAndExpand" >
             <ScrollView BackgroundColor="#33444B">
-                <StackLayout >
-                    <Grid>
-                        <Button TextColor="White" Text="{Binding OrderID}" FontSize="14"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="ic_action_drafts.png"/>
-                        <Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
-                        <Button TextColor="White" Text="{Binding Source}" FontSize="14"  Grid.Row="1" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="source.png"/>
-                        <Button TextColor="White" Text="{Binding Destination}" FontSize="14"  Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="destination.png"/>
+                    <StackLayout Spacing="-6"  >
+                        <Grid HeightRequest="170">
+                        <Button TextColor="White" Text="{Binding OrderID}" FontSize="14"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="ORDER.png"/>
+                        <Button TextColor="White" Text="{Binding Status}" FontSize="14"  Grid.Row="0" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
+                        <Button TextColor="White" Text="{Binding Source}" FontSize="13"  Grid.Row="1" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="source.png"/>
+                        <Button TextColor="White" Text="{Binding Destination}" FontSize="13"  Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="destination.png"/>
                         <Button TextColor="White" Text="{Binding Qty, StringFormat='Qty :{0}'}" FontSize="14"  Grid.Row="2" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="quantity.png"/>
                         <Button TextColor="White" Text="{Binding OrderValue}" FontSize="14"  Grid.Row="2" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="money.png"/>
-                    </Grid>
-                   
+                        </Grid>
+                        <Grid Padding="0,5,0,0" >
+                            <Button TextColor="White" Text="{Binding UnRoundedQty,StringFormat='Unrounded :{0}'}" FontSize="12"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="pie.png"/>
+                            <Button TextColor="White" Text="{Binding SuppOrderQty,StringFormat='Supporder :{0}'}" FontSize="12"  Grid.Row="0" Grid.Column="1"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" />
+                            <Button TextColor="White" Text="{Binding FwdBuyQty,StringFormat='ForwardBuy :{0}'}" FontSize="12"  Grid.Row="0" Grid.Column="2"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" />
+                        </Grid>
                     <!--<Label BackgroundColor="White"  Text="{Binding Notes}" 
                                                     WidthRequest="150"
                                                    HeightRequest="90"
                                                   HorizontalOptions="FillAndExpand"
                                                   VerticalOptions="FillAndExpand"
                                                    />-->
-               
-                <Grid Margin="0">
+                        <Grid Padding="0,0,0,10"  >
+                            <gauge:SfLinearGauge>
+                            <gauge:SfLinearGauge.Annotations>
+                                <gauge:LinearGaugeAnnotation  ScaleValue="15" ViewMargin ="0,20" >
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding Type3Qty}" BackgroundColor="Transparent" FontSize="15"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+
+                                <gauge:LinearGaugeAnnotation ScaleValue="55" ViewMargin ="0,20">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding Type2Qty}" BackgroundColor="Transparent" FontSize="15"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+
+                                <gauge:LinearGaugeAnnotation ScaleValue="95" ViewMargin ="0,20">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding Type1Qty}"  BackgroundColor="Transparent" FontSize="15"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+                                <gauge:LinearGaugeAnnotation  ScaleValue="15" ViewMargin ="0,-10" >
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding FinalCovDur, StringFormat=' {0} day '}" BackgroundColor="Transparent" FontSize="15" TextColor="White"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+
+                                <gauge:LinearGaugeAnnotation ScaleValue="55" ViewMargin ="0,-10">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding NetworkMinCovDur, StringFormat=' {0} day '}" BackgroundColor="Transparent" FontSize="15" TextColor="White"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+
+                                <gauge:LinearGaugeAnnotation ScaleValue="95" ViewMargin ="0,-10">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="{Binding NeedCovDur, StringFormat=' {0} day '}" BackgroundColor="Transparent" FontSize="15" TextColor="White"/>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+                                <gauge:LinearGaugeAnnotation ScaleValue="15" ViewMargin ="0,60">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Label Text="FINAL COVERAGE" TextColor="White" FontSize ="14"></Label>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+                                <gauge:LinearGaugeAnnotation ScaleValue="95" ViewMargin ="0,60">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                        <Button Text="NEED" TextColor="White" BackgroundColor="Transparent" FontSize ="14"></Button>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+                                <gauge:LinearGaugeAnnotation ScaleValue="55" ViewMargin ="0,60">
+                                    <gauge:LinearGaugeAnnotation.View>
+                                            <Button Text="NETWORK" BackgroundColor="Transparent" TextColor="White"  FontSize ="14"></Button>
+                                    </gauge:LinearGaugeAnnotation.View>
+                                </gauge:LinearGaugeAnnotation>
+                                    <!--<gauge:LinearGaugeAnnotation ScaleValue="130" ViewMargin ="-100,60">
+                                        <gauge:LinearGaugeAnnotation.View>
+                                            <Button  HeightRequest="200"                 Text="COVERAGE" Rotation="-90" TextColor="White" BackgroundColor="Transparent" FontSize ="14"></Button>
+                                        </gauge:LinearGaugeAnnotation.View>
+                                    </gauge:LinearGaugeAnnotation>-->
+
+                                </gauge:SfLinearGauge.Annotations>
+
+                            <gauge:SfLinearGauge.Scales>
+                                <gauge:LinearScale MinimumValue="0" MaximumValue="110"
+                                ShowLabels="False" ScaleBarColor="Transparent"
+                              MinorTicksPerInterval="1" ScaleBarSize="13" ScalePosition="BackWard" ShowTicks ="False">
+                                    <gauge:LinearScale.Ranges>
+                                        <gauge:LinearRange StartValue="0" EndValue="30" StartWidth="45" EndWidth="45" >
+                                            <gauge:LinearRange.GradientStops>
+                                                <gauge:GaugeGradientStop Value="0" Color="#4dff4d"/>
+                                                <gauge:GaugeGradientStop Value="100" Color="#99ff99"/>
+                                            </gauge:LinearRange.GradientStops>
+                                        </gauge:LinearRange>
+                                        <gauge:LinearRange StartValue="30" EndValue="40" Color="Gray" StartWidth="45" EndWidth="45" />
+                                        <gauge:LinearRange StartValue="40" EndValue="70" StartWidth="45" EndWidth="45" >
+                                            <gauge:LinearRange.GradientStops>
+                                                <gauge:GaugeGradientStop Value="0" Color="#c44dff"/>
+                                                <gauge:GaugeGradientStop Value="100" Color="#dd99ff"/>
+                                            </gauge:LinearRange.GradientStops>
+                                        </gauge:LinearRange>
+                                        <gauge:LinearRange StartValue="70" EndValue="80" Color="Gray" StartWidth="45" EndWidth="45" />
+                                        <gauge:LinearRange StartValue="80" EndValue="110" StartWidth="45" EndWidth="45" >
+
+                                            <gauge:LinearRange.GradientStops>
+                                                <gauge:GaugeGradientStop Value="0" Color="#4dd2ff"/>
+                                                <gauge:GaugeGradientStop Value="100" Color="#99e6ff"/>
+                                            </gauge:LinearRange.GradientStops>
+                                        </gauge:LinearRange>
+                                            <!--<gauge:LinearRange StartValue="110" EndValue="115" Color="Gray" StartWidth="75" EndWidth="75" />-->
+                                        </gauge:LinearScale.Ranges>
+                                    <gauge:LinearScale.Pointers>
+                                        <gauge:SymbolPointer Color="#4dd2ff" MarkerShape="InvertedTriangle" Value="80" Thickness="8" />
+                                        <gauge:SymbolPointer Color="#c44dff" MarkerShape="InvertedTriangle" Value="40" Thickness="8" />
+                                        <gauge:SymbolPointer Color="#4dff4d" MarkerShape="InvertedTriangle" Value="0" Thickness="8" />
+                                    </gauge:LinearScale.Pointers>
+                                   
+                                </gauge:LinearScale>
+                            </gauge:SfLinearGauge.Scales>
+                        </gauge:SfLinearGauge>
+                            </Grid>
+                        <Grid   >
+                            <!--<buttons:SfChip  Text="{Binding Notes}" 
+                            WidthRequest="150"
+                            HeightRequest="85"  
+                            CornerRadius = "4"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="#3d525a"
+                            TextColor="White"
+                            ImageSource="textbox.png"
+                            ShowIcon="true" >
+                        </buttons:SfChip>-->
+
+                            <Button  WidthRequest="150"
+                            HeightRequest="85" TextColor="White" Image="textbox.png" Text="{Binding Notes}" BackgroundColor="#3d525a"  CornerRadius = "4" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"   />
+                        </Grid >
+                     <Grid Margin="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="180" />
                         </Grid.RowDefinitions>
@@ -64,57 +183,21 @@
 
                         </gauge:SfCircularGauge>
                     </Grid>
-                    <buttons:SfChip  Text="{Binding Notes}" 
-                            WidthRequest="150"
-                            HeightRequest="70"  
-                            CornerRadius = "4"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand"
-                            BackgroundColor="#999999"
-                            TextColor="White"
-                            ImageSource="textbox.png"
-                            ShowIcon="true" >
-                    </buttons:SfChip>
-                    <gauge:SfLinearGauge BackgroundColor="Transparent">
-
-                        <gauge:SfLinearGauge.Annotations>
-                            <gauge:LinearGaugeAnnotation ScaleValue ="60" HorizontalViewAlignment ="Start">
-                                <gauge:LinearGaugeAnnotation.View>
-                                    <Label Text="60%" FontAttributes = "Bold" TextColor= "Black" FontSize ="15"/>
-                                </gauge:LinearGaugeAnnotation.View>
-                            </gauge:LinearGaugeAnnotation>
-                        </gauge:SfLinearGauge.Annotations>
-
-                        <gauge:SfLinearGauge.Scales>
-                            <gauge:LinearScale ScaleBarColor="Transparent" LabelColor="Transparent" MinorTicksPerInterval ="1" ScaleBarSize ="40">
-                                <gauge:LinearScale.MajorTickSettings>
-                                    <gauge:LinearTickSettings Thickness="1"  Color="Gray" Length="15"/>
-                                </gauge:LinearScale.MajorTickSettings>
-                                <gauge:LinearScale.MinorTickSettings>
-                                    <gauge:LinearTickSettings Thickness="1"  Color="Gray" Length="7"/>
-                                </gauge:LinearScale.MinorTickSettings>
-                                <gauge:LinearScale.Ranges>
-                                    <gauge:LinearRange StartValue="0" EndValue="40" Color="#27beb7" >
-                                        <gauge:LinearRange.Offset>
-                                            <OnPlatform x:TypeArguments="x:Double" Android="-20"  />
-                                        </gauge:LinearRange.Offset>
-                                    </gauge:LinearRange>
-                                    <gauge:LinearRange StartValue="40" EndValue="100" Color="LightCyan">
-                                        <gauge:LinearRange.Offset>
-                                            <OnPlatform x:TypeArguments="x:Double" Android="-20" />
-                                        </gauge:LinearRange.Offset>
-                                    </gauge:LinearRange>
-                                </gauge:LinearScale.Ranges>
-                            </gauge:LinearScale>
-                        </gauge:SfLinearGauge.Scales>
-
-                    </gauge:SfLinearGauge>
-                    <Grid>
-                        <Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>
-                        <Button TextColor="White" Text="{Binding NoOfTrucks, StringFormat='No of Trucks Built:{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="truck.png"/>
-                        <Button TextColor="White" Text="{ Binding NoOfSKUs,StringFormat='No of SKUs in the Order :{0}'}" FontSize="14"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="SKU.png"/>
+                  
+                     
+                      
+                        <Grid>
+                        <!--<Button TextColor="White" Text="{Binding Status, StringFormat='Status :{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="status.png"/>-->
+                        <Button TextColor="White" Text="{Binding NoOfTrucks, StringFormat='No of Trucks Built:{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="truck.png"/>
+                        <Button TextColor="White" Text="{ Binding NoOfSKUs,StringFormat='No of SKUs in the Order :{0}'}" FontSize="14"  Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" BorderColor="Black" FontFamily="Arial" Image="SKU.png"/>
                     </Grid>
-                  </StackLayout>
+                        <chart:SfChart  BindingContext="{x:Reference MainStack}">
+                                 <chart:DoughnutSeries ItemsSource ="{Binding Quantitytypes}"
+	                             XBindingPath="Name"
+	                             YBindingPath="value"/>
+                           
+                        </chart:SfChart>
+                    </StackLayout>
             </ScrollView>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#1F3138">
 
@@ -122,7 +205,8 @@
                 <Button Clicked="Review_Button_Clicked" TextColor="White" Text="Review" HorizontalOptions="FillAndExpand" FontSize="14"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Bold" Image="review.png"></Button>
                 <Button Clicked="Reject_Button_Clicked" TextColor="White" Text="Reject" HorizontalOptions="FillAndExpand" FontSize="14"  BackgroundColor="Transparent" BorderColor="Black" FontFamily="Bold" Image="reject.png"></Button>
             </StackLayout>
-        </StackLayout>
+                
+            </StackLayout>
     
         </sfPopup:SfPopupLayout.Content>
     </sfPopup:SfPopupLayout>
