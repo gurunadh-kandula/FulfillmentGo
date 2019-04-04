@@ -45,8 +45,8 @@
            Placeholder="Search here to filter"
            TextChanged="OnFilterTextChanged"  TextColor="Black" CancelButtonColor="Black"  />
                 <Grid>
-                    <Button Text="CAT:Clothing" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start"/>
-                    <Button Text="OTB: $10,000" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start" />
+                    <Button Text="CAT:Clothing" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start" Image="CAT2.png"/>
+                    <Button Text="OTB:$ 10000" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" HeightRequest="58" FontSize="16" TextColor="White" HorizontalOptions="Start" Image="OTB.png"/>
                 </Grid>
                 <syncfusion:SfListView x:Name="listView" ItemSize="88"  ItemsSource="{Binding OrderCollection}" AllowSwiping="True"  
                  SwipeOffset="360" SwipeThreshold="210" ItemTapped="listView_ItemTapped" ItemHolding="ListView_ItemHolding"
